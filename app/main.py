@@ -16,7 +16,7 @@ def get_application() -> FastAPI:
         JwtAuthMiddleware,
         secret_key=project_settings.SECRET_KEY,
         algorithms=[project_settings.ALGORITHM],
-        public_paths=["/users/login"],
+        public_paths=["/users/login", "/accounts/hook"],
     )
     application.include_router(get_apps_router())
 
